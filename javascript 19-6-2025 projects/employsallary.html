@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Employa Sallary</h2>
+
+    <script>
+        // Employee Salary Calculation
+        let employeeName = prompt("Enter the employee's name: ");
+        let basicSalary = Number(prompt("Enter the basic salary of " + employeeName + ": "));
+        let hra = (basicSalary * 20) / 100; // HRA is 20% of basic salary
+        let da = (basicSalary * 10) / 100; // DA is 10% of basic salary
+        let tax = (basicSalary * 5) / 100; // Tax is 5% of basic salary
+
+        console.log("Employee Name: " + employeeName);
+        console.log("Basic Salary: " + basicSalary);
+        console.log("HRA: " + hra);
+        console.log("DA: " + da);
+        console.log("Tax: " + tax);
+
+        let totalSalary = basicSalary + hra + da - tax;
+        console.log("Total Salary: " + totalSalary);
+    </script>
+</body>
+</html>

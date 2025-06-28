@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>shopping bill</h2>
+
+    <script>
+        //grosarry bill
+        let item1 = prompt("Enter the name of item 1: ");
+        let price1 = Number(prompt("Enter the price of " + item1 + ": "));
+        let quantity1 = Number(prompt("Enter the quantity of " + item1 + ": "));
+        
+        let item2 = prompt("Enter the name of item 2: ");
+        let price2 = Number(prompt("Enter the price of " + item2 + ": "));
+        let quantity2 = Number(prompt("Enter the quantity of " + item2 + ": "));
+        
+        let totalPrice1 = price1 * quantity1;
+        let totalPrice2 = price2 * quantity2;
+        
+        let totalBill = totalPrice1 + totalPrice2;
+
+        if (isNaN(price1) || isNaN(quantity1) || isNaN(price2) || isNaN(quantity2)) {
+  console.log("Please enter valid numbers for prices and quantities.");
+} else {
+  // Your bill calculation and output code here
+}
+        
+        console.log("Item 1: " + item1 + ", Price: " + price1 + ", Quantity: " + quantity1 + ", Total Price: " + totalPrice1);
+        console.log("Item 2: " + item2 + ", Price: " + price2 + ", Quantity: " + quantity2 + ", Total Price: " + totalPrice2);
+        console.log("Total Bill Amount: " + totalBill);
+    </script>
+</body>
+</html>

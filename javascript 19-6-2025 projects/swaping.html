@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Swapping</h2>
+
+    <script>
+     //swaping two variables without using a third variable
+let a1 = 5;
+let b1 = 10;
+console.log("Before swapping: a1 =", a1, ", b1 =", b1);
+
+a1 = a1 + b1; 
+b1 = a1 - b1; 
+a1 = a1 - b1; 
+console.log("After swapping: a1 =", a1, ", b1 =", b1);
+
+//swaping two variable using a third variable
+let a2 = 15;
+let b2 = 25;
+console.log("Before swapping: a2 =", a2, ", b2 =", b2);
+let temp = a2; 
+a2 = b2;
+b2 = temp; 
+console.log("After swapping: a2 =", a2, ", b2 =", b2);
+
+
+    </script>
+
+</body>
+</html>
