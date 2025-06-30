@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Food Order Menu</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <h2>🍕 Food Order Menu</h2>
+
+  <div class="menu-box">
+    <p>1. Pizza - ₹150</p>
+    <p>2. Burger - ₹100</p>
+    <p>3. Sandwich - ₹80</p>
+    <p>4. Cold Drink - ₹40</p>
+    <p>5. Finish Order</p>
+  </div>
+
+  <button class="order-button" onclick="takeOrder()">Start Order</button>
+
+  <div class="result-box" id="result" style="display:none;">
+    <h3>🧾 Your Order Summary:</h3>
+    <pre id="orderDetails"></pre>
+    <p><strong>Total Amount: ₹<span id="totalAmount"></span></strong></p>
+  </div>
+  
+  <script src="index.js"></script>
+  
+    
+  
+
+</body>
+</html>
