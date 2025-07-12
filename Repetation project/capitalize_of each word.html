@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style_capitalize.css">
+</head>
+<body>
+      <div class="box">
+    <h2>Capitalize Each Word</h2>
+    <input type="text" id="inputText" placeholder="Enter a sentence..." />
+    <button onclick="capitalizeWords()">Capitalize</button>
+    <div id="result"></div>
+  </div>
+  <script>
+    function capitalizeWords() {
+      const input = document.getElementById("inputText").value;
+      let result = "";
+      let capitalizeNext = true;
+
+      for (let i = 0; i < input.length; i++) {
+        let char = input[i];
+
+        if (char === " ") {
+          capitalizeNext = true;
+          result += char;
+        } else {
+          if (capitalizeNext) {
+            result += char.toUpperCase();
+            capitalizeNext = false;
+          } else {
+            result += char.toLowerCase();
+          }
+        }
+      }
+
+      document.getElementById("result").innerText = result;
+    }
+  </script>
+
+</body>
+</html>

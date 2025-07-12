@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style_findlength.css">
+</head>
+<body>
+    <div class="container">
+    <h2>Find String Length</h2>
+    <input type="text" id="inputText" placeholder="Type something..." />
+    <button onclick="findLength()">Calculate Length</button>
+    <div id="output"></div>
+  </div>
+<script>
+    function findLength() {
+      const str = document.getElementById("inputText").value;
+      let count = 0;
+
+      for (let i in str) {
+        count++;
+      }
+
+      document.getElementById("output").innerText = "Length: " + count;
+    }
+  </script>
+</body>
+</html>

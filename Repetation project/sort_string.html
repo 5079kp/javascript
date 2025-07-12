@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style_shortstring.css">
+</head>
+<body>
+      <div class="container">
+    <h2>Sort Your String</h2>
+    <input type="text" id="inputString" placeholder="Type here...">
+    <button onclick="sortString()">Sort</button>
+    <div class="result-box" id="result"></div>
+  </div>
+
+
+      <script>
+    function sortString() {
+      const input = document.getElementById('inputString').value;
+      let chars = input.split('');
+      
+      // Simple Bubble Sort using for loop
+      for (let i = 0; i < chars.length; i++) {
+        for (let j = 0; j < chars.length - i - 1; j++) {
+          if (chars[j].toLowerCase() > chars[j + 1].toLowerCase()) {
+            let temp = chars[j];
+            chars[j] = chars[j + 1];
+            chars[j + 1] = temp;
+          }
+        }
+      }
+
+      const sortedString = chars.join('');
+      document.getElementById('result').innerText = sortedString;
+    }
+  </script>
+
+</body>
+</html>

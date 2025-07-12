@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style_palindrome.css">
+</head>
+<body>
+    <div class="card">
+    <h2>Palindrome Number Checker</h2>
+    <input type="number" id="numberInput" placeholder="Enter a number..." />
+    <button onclick="checkPalindrome()">Check</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function checkPalindrome() {
+      let num = document.getElementById("numberInput").value;
+      let original = num;
+      let reversed = "";
+      
+    
+      for (let i = num.length - 1; i >= 0; i--) {
+        reversed += num[i];
+      }
+
+      let result = (original === reversed) ? "Palindrome ✅" : "Not a Palindrome ❌";
+      document.getElementById("result").innerText = result;
+    }
+  </script>
+
+
+
+</body>
+</html>
