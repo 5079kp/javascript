@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="sameelement.css">
+</head>
+<body>
+      <div class="container">
+    <h2>Count String Occurrences</h2>
+    <input type="text" id="itemInput" placeholder="Enter a string..." />
+    <br>
+    <button onclick="addItem()">Add Item</button>
+    <button onclick="showFrequencies()">Show Count</button>
+    <div class="output" id="output"></div>
+  </div>
+
+
+<script>
+      const itemArray = [];
+
+    function addItem() {
+      const input = document.getElementById('itemInput');
+      const value = input.value.trim().toLowerCase();
+
+      if (value) {
+        itemArray.push(value);
+        input.value = "";
+        alert(`"${value}" added to array!`);
+      } else {
+        alert("Please enter a valid string.");
+      }
+    }
+
+    function showFrequencies() {
+      const frequencyMap = {};
+      itemArray.forEach(item => {
+        frequencyMap[item] = (frequencyMap[item] || 0) + 1;
+      });
+
+      const output = document.getElementById("output");
+      output.innerHTML = ""; // Clear previous output
+
+      if (itemArray.length === 0) {
+        output.innerHTML = "<p class='item'>No items in array.</p>";
+        return;
+      }
+
+      Object.keys(frequencyMap).forEach(item => {
+        const times = frequencyMap[item];
+        const text = `${item} → ${times} ${times > 1 ? "times" : "time"}`;
+        const p = document.createElement("p");
+        p.className = "item";
+        p.textContent = text;
+        output.appendChild(p);
+      });
+    }
+</script>
+
+
+
+</body>
+</html>

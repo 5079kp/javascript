@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="blankarray.css">
+</head>
+<body>
+      <div class="container">
+    <h2>Add Element to Array</h2>
+    <input type="text" id="valueInput" placeholder="Type a value..." />
+    <button onclick="addToArray()">Add to Array</button>
+    <div class="output" id="arrayDisplay">
+      Current Array: <span>[]</span>
+    </div>
+  </div>
+
+  <script>
+    // Start with a blank array
+    let values = [];
+
+    function addToArray() {
+      const inputEl = document.getElementById("valueInput");
+      const value = inputEl.value.trim();
+
+      if (value) {
+        // Use array method push() to add the value
+        values.push(value);
+
+        // Display updated array
+        document.getElementById("arrayDisplay").innerHTML =
+          "Current Array: <span>[" + values.map(v => `"${v}"`).join(", ") + "]</span>";
+
+        // Clear input
+        inputEl.value = "";
+      } else {
+        alert("Please enter a valid value.");
+      }
+    }
+  </script>
+
+    
+</body>
+</html>

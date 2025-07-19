@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="adduniqe.css">
+
+</head>
+<body>
+      <div class="container">
+    <h2>Add Unique Value</h2>
+    <input type="text" id="valueInput" placeholder="Type a value..." />
+    <button onclick="addUnique()">Add to Array</button>
+    <p class="alert" id="alertBox">Value already exists!</p>
+
+    <div class="output" id="arrayOutput">
+      Current Array: <span>[]</span>
+    </div>
+  </div>
+
+  <script>
+    const uniqueArray = [];
+
+    function addUnique() {
+      const inputEl = document.getElementById("valueInput");
+      const alertEl = document.getElementById("alertBox");
+      const value = inputEl.value.trim();
+
+      if (value) {
+        if (!uniqueArray.includes(value)) {
+          uniqueArray.push(value); // ✅ array method
+          alertEl.style.display = "none";
+          document.getElementById("arrayOutput").innerHTML =
+            "Current Array: <span>[" + uniqueArray.map(v => `"${v}"`).join(", ") + "]</span>";
+        } else {
+          alertEl.style.display = "block"; // Show alert
+        }
+        inputEl.value = ""; // Clear input
+      } else {
+        alert("Please enter a value.");
+      }
+    }
+  </script>
+
+</body>
+</html>

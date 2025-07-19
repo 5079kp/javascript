@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="finduniq.css">
+</head>
+<body>
+    <div class="container">
+    <h2>Find Unique Elements</h2>
+    <input type="text" id="arrayInput" placeholder="Enter comma-separated values (e.g. 1,2,2,3,4,1)">
+    <button onclick="findUnique()">Find Unique Elements</button>
+    <div class="output" id="outputBox"></div>
+  </div>
+  
+  <script>
+    function findUnique() {
+      const input = document.getElementById("arrayInput").value;
+      const arr = input.split(",").map(item => item.trim());
+
+      const unique = arr.filter((item, index, array) => array.indexOf(item) === index);
+
+      document.getElementById("outputBox").innerText = `Unique Elements:\n[ ${unique.join(", ")} ]`;
+    }
+  </script>
+
+
+    
+</body>
+</html>

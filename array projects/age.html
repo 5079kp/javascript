@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="age.css">
+</head>
+<body>
+      <div class="container">
+    <h2>Add Person & Filter Age 18+</h2>
+    <input type="text" id="nameInput" placeholder="Enter name">
+    <input type="number" id="ageInput" placeholder="Enter age">
+    <button onclick="addPerson()">Add Person</button>
+
+    <div class="output" id="fullArray">
+      <div class="section-title">All People:</div>
+      <span>[]</span>
+    </div>
+
+    <div class="output" id="filteredArray">
+      <div class="section-title">People 18+:</div>
+      <span>[]</span>
+    </div>
+  </div>
+  <script>
+    const people = [];
+
+    function addPerson() {
+      const name = document.getElementById("nameInput").value.trim();
+      const age = parseInt(document.getElementById("ageInput").value.trim());
+
+      if (name && !isNaN(age)) {
+        people.push({ name, age });
+
+        // Display all people
+        document.getElementById("fullArray").querySelector("span").innerText =
+          JSON.stringify(people, null, 2);
+
+        // Filter 18+ using array filter method
+        const adults = people.filter(person => person.age >= 18);
+
+        document.getElementById("filteredArray").querySelector("span").innerText =
+          JSON.stringify(adults, null, 2);
+
+        // Clear inputs
+        document.getElementById("nameInput").value = "";
+        document.getElementById("ageInput").value = "";
+      } else {
+        alert("Please enter valid name and age.");
+      }
+    }
+  </script>
+
+
+</body>
+</html>

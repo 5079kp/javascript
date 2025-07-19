@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="latterchange.css">
+</head>
+<body>
+      <div class="container">
+    <h2>String Case Toggle</h2>
+    <input type="text" id="inputText" placeholder="Enter any string" />
+    <button onclick="convertCase()">Convert Case</button>
+    <div class="result" id="outputText"></div>
+  </div>
+
+  <script>
+    function convertCase() {
+  const input = document.getElementById("inputText").value;
+
+  const toggled = input
+    .split("") // split into array of characters
+    .map(char =>
+      char === char.toLowerCase()
+        ? char.toUpperCase()
+        : char.toLowerCase()
+    )
+    .join(""); // join back into a string
+
+  document.getElementById("outputText").innerText = toggled;
+}
+
+  </script>
+</body>
+</html>
