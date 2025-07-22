@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KP tech style Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="calculator">
+      <input type="text" placeholder="0" id="inputBox" disabled />
+
+      <!-- Utility icon row -->
+     <div class="utility-buttons">
+  <button id="historyBtn"><i class="fa-regular fa-clock"></i></button>
+  <button id="unitConvertBtn"><i class="fa-solid fa-ruler-horizontal"></i></button>
+  <button id="sqrtBtn"><i class="fa-solid fa-square-root-variable"></i></button>
+  <button class="green-btn" id="backspaceBtn"><i class="fa-solid fa-delete-left"></i></button>
+</div>
+
+      <!-- Main button grid -->
+      <div class="button-grid">
+        <button class="operator orange">C</button>
+        <button class="operator">( )</button>
+        <button class="operator green">%</button>
+        <button class="operator">÷</button>
+
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button class="operator">×</button>
+
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button class="operator">−</button>
+
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button class="operator">+</button>
+
+        <button class="operator">+/-</button>
+        <button>0</button>
+        <button>.</button>
+        <button class="equalBtn">=</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
