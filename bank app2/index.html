@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bank of Tech - Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Login Screen -->
+  <div id="loginScreen" class="login-screen">
+    <div class="login-box">
+      <h2>Bank of Tech</h2>
+      <p>Enter your details to login</p>
+      <form id="loginForm">
+        <input type="text" id="username" placeholder="Enter your name" required />
+        <input type="text" id="account" placeholder="Enter account number" required />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="dashboardScreen" class="dashboard hidden" style="display:none;">
+    <aside class="sidebar">
+            <img id="profilePhoto" class="profile-img" src="" alt="Profile Photo" />
+      <div class="profile"> 
+        <h3 id="sidebarName">User</h3>  
+        <p id="sidebarEmail">user@bank.com</p>
+      </div>
+      <ul class="nav-links">
+        <li>🏠 Home</li>
+        <li>💼 Accounts</li>
+        <li>💬 Messages</li>
+        <li>🔔 Alerts</li>
+        <li>📍 Locations</li>
+        <li>📊 Reports</li>
+      </ul>
+    </aside>
+
+    <main class="main">
+      <h2>Welcome Back!</h2>
+      <div class="cards">
+        <div class="card total">₹<span id="totalAmount">30000</span><p>Total Balance</p></div>
+        <div class="card" onclick="handleCredit()">💸 <span></span><p>Credit</p></div>
+        <div class="card" onclick="handleDebit()">💳 <span></span><p>Debit</p></div>
+        <div class="card"><p>🕘 View History</p></div>
+      </div>
+
+      <div class="credit-card">
+        <div class="top">
+          <span class="visa">VISA</span>
+        </div>
+        <div class="chip-eye">
+          <div class="chip"></div>
+          <div class="eye" onclick="toggleCardBalance()">👁</div>
+        </div>
+        <div class="credit-card">
+  <div class="card-holder">Your Name</div>
+  <div class="card-number">•••• •••• •••• 0000</div>
+</div>
+        <div class="card-balance" id="cardBalance"></div>
+        <button class="pay-btn" onclick="payWithCard()">Pay with Card</button>
+      </div>
+
+
+
+
+      <!-- Transaction Section -->
+
+      <div class="bottom-container">
+        <div class="chart-container">
+              <canvas id="barChart"></canvas>
+
+        </div>
+        <div class="history">
+          <h3>Transaction History</h3>
+          <ul id="historyList"></ul>
+        </div>
+      </div>
+    </main>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
