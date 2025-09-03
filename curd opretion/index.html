@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Add to Cart with Product CRUD</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Add to cart system (CRUD)</h1>
+      <button id="openCartBtn" class="btn">Cart (<span id="cartCount">0</span>)</button>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <!-- Filters -->
+        <div class="filter-group">
+          <h4>Search</h4>
+          <input id="searchInput" type="search" placeholder="Search by title">
+        </div>
+        <div class="filter-group">
+          <h4>Category</h4>
+          <div id="categoryList" class="filter-list"></div>
+        </div>
+        <div class="filter-group">
+          <h4>Sort</h4>
+          <select id="sortSelect">
+            <option value="new">Newest</option>
+            <option value="low">Price: Low → High</option>
+            <option value="high">Price: High → Low</option>
+          </select>
+        </div>
+        <div style="display:flex;gap:8px">
+          <button id="applyBtn" class="btn">Apply</button>
+          <button id="resetBtn" class="btn ghost">Reset</button>
+        </div>
+
+        <!-- Add Product Form -->
+        <div class="filter-group" style="margin-top:20px">
+          <h4>Add Product</h4>
+          <input id="pTitle" type="text" placeholder="Product title"><br><br>
+          <input id="pPrice" type="number" placeholder="Price"><br><br>
+          <input id="pCategory" type="text" placeholder="Category"><br><br>
+          <input id="pImage" type="file" accept="image/*"><br><br>
+          <button id="addProductBtn" class="btn w-full">Add Product</button>
+        </div>
+      </aside>
+
+      <main class="main">
+        <div class="tools">
+          <input id="quickSearch" type="search" placeholder="Quick search..." />
+          <div style="margin-left:auto;color:var(--muted);font-size:13px">
+            Showing <span id="resultCount">0</span> products
+          </div>
+        </div>
+
+        <!-- Product Grid -->
+        <section id="productGrid" class="grid" aria-live="polite">
+          <!-- Existing products (static) -->
+          <div class="card" data-id="p1" data-category="Shoes" data-price="2799">
+            <img src="images/images-1.jpeg">
+            <h3>Classic Sneakers</h3>
+            <div class="meta"><div>Shoes</div><div>₹2799.00</div></div>
+            <div class="actions">
+              <button class="btn" data-action="add" data-id="p1">Add to Cart</button>
+              <button class="btn ghost" data-action="delete" data-id="p1">Delete</button>
+            </div>
+          </div>
+
+    <div class="card" data-id="p2" data-category="Shoes" data-price="3099">
+    <img src="images/images-2.jpeg">
+    <h3>Party Shoes</h3>
+    <div class="meta"><div>Shoes</div><div>₹3099.00</div></div>
+    <div class="actions">
+        <button class="btn" data-action="add" data-id="p2">Add to Cart</button>
+        <button class="btn ghost" data-action="delete" data-id="p2">Delete</button>
+        </div>
+  </div>
+
+  <div class="card" data-id="p3" data-category="Shoes" data-price="3499">
+    <img src="images/images-3 jpeg" alt="Running Shoes">
+    <h3>Running Shoes</h3>
+    <div class="meta"><div>Shoes</div><div>₹3499.00</div></div>
+    <div class="actions">
+      <button class="btn" data-action="add" data-id="p3">Add to Cart</button>
+     <button class="btn ghost" data-action="delete" data-id="p3">Delete</button>
+
+    </div>
+  </div>
+
+  <div class="card" data-id="p4" data-category="Electronics" data-price="1999">
+    <img src="images/images-4 jpeg.jpg" alt="Wireless Earbuds">
+    <h3>Wireless Earbuds</h3>
+    <div class="meta"><div>Electronics</div><div>₹1999.00</div></div>
+    <div class="actions">
+      <button class="btn" data-action="add" data-id="p4">Add to Cart</button>
+            <button class="btn ghost" data-action="delete" data-id="p4">Delete</button>
+    </div>
+  </div>
+
+  <div class="card" data-id="p5" data-category="Electronics" data-price="35999">
+    <img src="images/images-6.jpeg" alt="Smart Watch">
+    <h3>Smart Watch</h3>
+    <div class="meta"><div>Electronics</div><div>₹35,999.00</div></div>
+    <div class="actions">
+      <button class="btn" data-action="add" data-id="p5">Add to Cart</button>
+     <button class="btn ghost" data-action="delete" data-id="p5">Delete</button>
+
+    </div>
+  </div>
+
+  <div class="card" data-id="p6" data-category="Electronics" data-price="100000">
+    <img src="images/images-7.jpeg">
+    <h3>Mobile phone</h3>
+    <div class="meta"><div>Electronic</div><div>₹100000</div></div>
+    <div class="actions"><button class="btn" data-action="add" data-id="p6">Add to Cart</button>.
+              <button class="btn ghost" data-action="delete" data-id="p6">Delete</button>
+    </div>
+  </div>
+
+    <div class="card" data-id="p7" data-category="Electronics" data-price="30000">
+    <img src="images/images-11.jpeg">
+    <h3>Laptop</h3>
+    <div class="meta"><div>Electronic</div><div>₹30000</div></div>
+    <div class="actions">
+      <button class="btn" data-action="add" data-id="p7">Add to Cart</button>
+      <button class="btn ghost" data-action="delete" data-id="p7">Delete</button>
+    </div>
+  </div>
+
+
+    <div class="card" data-id="p8" data-category="Accessories" data-price="1799">
+    <img src="images/images-8 jpeg.jpg" alt="Leather Wallet">
+    <h3>Stylish-women-bag</h3>
+    <div class="meta"><div>Accessories</div><div>₹1799</div></div>
+    <div class="actions"><button class="btn" data-action="add" data-id="p8">Add to Cart</button>
+    <button class="btn ghost" data-action="delete" data-id="p8">Delete</button>
+    </div>
+  </div>
+  
+    <div class="card" data-id="p9" data-category="Accessories" data-price="799">
+    <img src="images/images-9.jpeg" alt="Leather Wallet">
+    <h3>Leather-men-Wallet</h3>
+    <div class="meta"><div>Accessories</div><div>₹799</div></div>
+    <div class="actions">
+      <button class="btn" data-action="add" data-id="p9">Add to Cart</button>
+       <button class="btn ghost" data-action="delete" data-id="p9">Delete</button>
+    </div>
+  </div>
+
+      <div class="card" data-id="p10" data-category="Accessories" data-price="2000">
+    <img src="images/image-10 .jpeg" alt="Leather Wallet">
+    <h3>Stylish-women-bag</h3>
+    <div class="meta"><div>Accessories</div><div>₹2000</div></div>
+    <div class="actions">
+      <button class="btn" data-action="add" data-id="p10">Add to Cart</button>
+              <button class="btn ghost" data-action="delete" data-id="p10">Delete</button>
+    </div>
+  </div>
+
+        <div class="card" data-id="p11" data-category="Accessories" data-price="1299">
+    <img src="images/image-12.jpg" alt="Leather Wallet">
+    <h3>Ladies-Sandals</h3>
+    <div class="meta"><div>Accessories</div><div>₹1299</div></div>
+    <div class="actions">
+      <button class="btn" data-action="add" data-id="p11">Add to Cart</button>
+     <button class="btn ghost" data-action="delete" data-id="p11">Delete</button>
+    </div>
+  </div>
+
+          <div class="card" data-id="p12" data-category="Accessories" data-price="1499">
+    <img src="images/image-13.jpeg" alt="Leather Wallet">
+    <h3>Ladies-Sandals</h3>
+    <div class="meta"><div>Accessories</div><div>₹1499</div></div>
+    <div class="actions"><button class="btn" data-action="add" data-id="p12">Add to Cart</button>
+   <button class="btn ghost" data-action="delete" data-id="p12">Delete</button>
+    </div>
+  </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- Cart Overlay + Drawer -->
+  <div id="cartOverlay" class="cart-overlay hidden"></div>
+  <div id="cartDrawer" class="cart-drawer" aria-hidden="true">
+    <header class="cart-header">
+      <h3>Your Cart</h3>
+      <button id="closeCart" class="btn ghost">✕</button>
+    </header>
+    <div id="cartList" class="cart-list"></div>
+    <footer class="cart-footer">
+      <div class="total"><span>Total:</span><strong id="cartTotal">₹0.00</strong></div>
+      <button id="checkout" class="btn w-full">Checkout</button>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast">Added to cart</div>
+
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
