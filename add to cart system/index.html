@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>E-Commerce </title>
+
+  <!-- Remix Icon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- GSAP -->
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+  <style>
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav">
+      <a class="logo" href="#">
+        <i class="ri-store-2-fill"></i> E-COMMERCE
+      </a>
+
+      <div class="search" role="search">
+        <i class="ri-search-line" aria-hidden="true"></i>
+        <input id="searchInput" type="search" placeholder="Search products…" aria-label="Search products">
+      </div>
+
+      <div class="right">
+        <button class="icon-btn" title="Help">
+          <i class="ri-question-line"></i>
+        </button>
+        <button class="icon-btn cart-icon" id="cartBtn" aria-label="Open cart" aria-haspopup="dialog" aria-expanded="false">
+          <i class="ri-shopping-cart-2-fill"></i>
+          <span class="cart-badge" id="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Intro -->
+  <section class="intro">
+    <div>
+      <h1>Smooth shopping.</h1>
+    
+    </div>
+    <div class="sr-only" aria-live="polite" id="liveRegion"></div>
+  </section>
+
+  <!-- Products -->
+  <main class="products" id="products">
+    <!-- Example product cards (use any images you have) -->
+    <!-- You can duplicate/modify these; JS uses event delegation -->
+    <article class="product-card" data-id="1" data-name="Stylish Women Purse" data-price="399" data-tag="New">
+      <figure class="product-figure">
+        <img src="images/image1.jpeg.jpeg" alt="Stylish Women Purse">
+        <span class="chip">New</span>
+      </figure>
+      <div class="product-body">
+        <div class="product-name">Stylish Women Purse</div>
+        <div class="meta">
+          <div class="price">$399</div>
+          <div class="details">Details</div>
+        </div>
+        <div class="cta-row">
+          <button class="add-btn"><i class="ri-add-line"></i> Add</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product-card" data-id="2" data-name="Stylish Men Shirts" data-price="299" data-tag="Hot">
+      <figure class="product-figure">
+        <img src="images/image2.jpeg.jpeg" alt="Stylish Men Shirts">
+        <span class="chip">Hot</span>
+      </figure>
+      <div class="product-body">
+        <div class="product-name">Stylish Men Shirts</div>
+        <div class="meta">
+          <div class="price">$299</div>
+          <div class="details">Details</div>
+        </div>
+        <div class="cta-row">
+          <button class="add-btn"><i class="ri-add-line"></i> Add</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product-card" data-id="3" data-name="Smart Watch" data-price="599" data-tag="Trending">
+      <figure class="product-figure">
+        <img src="images/image3.jpeg.jpeg" alt="Smart Watch">
+        <span class="chip">Trending</span>
+      </figure>
+      <div class="product-body">
+        <div class="product-name">Smart Watch</div>
+        <div class="meta">
+          <div class="price">$599</div>
+          <div class="details">Details</div>
+        </div>
+        <div class="cta-row">
+          <button class="add-btn"><i class="ri-add-line"></i> Add</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product-card" data-id="4" data-name="Plain Hoodie" data-price="199" data-tag="Deal">
+      <figure class="product-figure">
+        <img src="images/image4.jpeg.jpeg" alt="Plain Hoodie">
+        <span class="chip">Deal</span>
+      </figure>
+      <div class="product-body">
+        <div class="product-name">Plain Hoodie</div>
+        <div class="meta">
+          <div class="price">$199</div>
+          <div class="details">Details</div>
+        </div>
+        <div class="cta-row">
+          <button class="add-btn"><i class="ri-add-line"></i> Add</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product-card" data-id="5" data-name="Golden Perfume" data-price="299" data-tag="Gift">
+      <figure class="product-figure">
+        <img src="images/image5.jpeg.jpeg" alt="Golden Perfume">
+        <span class="chip">Gift</span>
+      </figure>
+      <div class="product-body">
+        <div class="product-name">Golden Perfume</div>
+        <div class="meta">
+          <div class="price">$299</div>
+          <div class="details">Details</div>
+        </div>
+        <div class="cta-row">
+          <button class="add-btn"><i class="ri-add-line"></i> Add</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product-card" data-id="6" data-name="Sleek Speaker" data-price="99" data-tag="Sale">
+      <figure class="product-figure">
+        <img src="images/image6.jpeg.jpeg" alt="Sleek Speaker">
+        <span class="chip">Sale</span>
+      </figure>
+      <div class="product-body">
+        <div class="product-name">Sleek Speaker</div>
+        <div class="meta">
+          <div class="price">$99</div>
+          <div class="details">Details</div>
+        </div>
+        <div class="cta-row">
+          <button class="add-btn"><i class="ri-add-line"></i> Add</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product-card" data-id="7" data-name="Retro Music Player" data-price="279" data-tag="Retro">
+      <figure class="product-figure">
+        <img src="images/image7.jpeg.jpeg" alt="Retro Music Player">
+        <span class="chip">Retro</span>
+      </figure>
+      <div class="product-body">
+        <div class="product-name">Retro Music Player</div>
+        <div class="meta">
+          <div class="price">$279</div>
+          <div class="details">Details</div>
+        </div>
+        <div class="cta-row">
+          <button class="add-btn"><i class="ri-add-line"></i> Add</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product-card" data-id="8" data-name="Sports Men's Shoes" data-price="599" data-tag="Sport">
+      <figure class="product-figure">
+        <img src="images/image13.jpeg.jpeg" alt="Sports Men's Shoes">
+        <span class="chip">Sport</span>
+      </figure>
+      <div class="product-body">
+        <div class="product-name">Sports Men's Shoes</div>
+        <div class="meta">
+          <div class="price">$599</div>
+          <div class="details">Details</div>
+        </div>
+        <div class="cta-row">
+          <button class="add-btn"><i class="ri-add-line"></i> Add</button>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- Overlay -->
+  <div class="overlay" id="overlay" aria-hidden="true"></div>
+
+  <!-- Cart Drawer -->
+  <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+    <div class="cart-head">
+      <h2 id="cartTitle">Your Cart</h2>
+      <button class="close-btn" id="closeCart"><i class="ri-close-line"></i></button>
+    </div>
+    <div class="cart-body">
+      <div id="emptyState" class="empty">Your cart is empty.</div>
+      <ul id="cart-items" class="cart-list" aria-live="polite"></ul>
+    </div>
+    <div class="cart-footer">
+      <div class="totals">
+        <span>Total</span>
+        <span id="total-price">$0.00</span>
+      </div>
+      <button class="checkout" id="checkoutBtn"><i class="ri-flashlight-fill"></i> Checkout</button>
+    </div>
+  </aside>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"><i class="ri-check-line"></i> Added to cart</div>
+
+  <script src="script.js" defer>
+    
+  </script>
+</body>
+</html>
