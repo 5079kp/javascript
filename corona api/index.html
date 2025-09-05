@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COVID-19 Country Dashboard</title>
+  <link rel="stylesheet" href="styl.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="row">
+      <h1>🌍 COVID-19 Dashboard</h1>
+      <div class="search">
+        <input id="search" type="text" placeholder="Enter country name (e.g., India)" />
+        <button id="searchBtn" class="btn">Search</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="country-info">
+      <img id="flag" src="" alt="Flag" />
+      <div>
+        <h2 id="country">Search a country</h2>
+        <div class="updated" id="updated"></div>
+      </div>
+    </section>
+
+    <section class="overview">
+      <div class="card cases"><h3>Total Cases</h3><p id="cases">0</p></div>
+      <div class="card active"><h3>Active Cases</h3><p id="active">0</p></div>
+      <div class="card recovered"><h3>Recovered</h3><p id="recovered">0</p></div>
+      <div class="card deaths"><h3>Deaths</h3><p id="deaths">0</p></div>
+      <div class="card today"><h3>Today's Cases</h3><p id="todayCases">0</p></div>
+      <div class="card today"><h3>Today's Deaths</h3><p id="todayDeaths">0</p></div>
+      <div class="card today"><h3>Critical / ICU</h3><p id="critical">0</p></div>
+    </section>
+
+    <section class="panel">
+      <h3 style="margin:6px 0 12px">Confirmed Cases by Date</h3>
+      <canvas id="trend"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    Powered by <a href="https://disease.sh/" target="_blank" rel="noreferrer noopener">disease.sh API</a>
+  </footer>
+
+  <!-- External JS link -->
+  <script src="script.js"></script>
+</body>
+</html>

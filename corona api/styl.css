@@ -1,0 +1,148 @@
+  
+    :root{
+      --primary:#4e54c8;
+      --accent:#ff6b6b;
+      --bg:#f7f9fc;
+      --card:#fff;
+      --text:#2b2d42;
+      --cases:#f39c12;
+      --active:#d35400;
+      --recovered:#27ae60;
+      --deaths:#7f8c8d;
+    }
+    *{
+      box-sizing:border-box;
+      padding:0%;
+      margin:0%;
+      font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    }
+    body{
+      background:var(--bg);color:var(--text);
+    }
+    header{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:linear-gradient(90deg,var(--primary),#6a71ff);
+      color:#fff;
+      padding:20px 16px;
+      box-shadow:0 2px 10px rgba(0,0,0,.15);
+    }
+    header .row{
+      max-width:1100px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1fr auto auto;
+      gap:10px;
+      align-items:center;
+    }
+    h1{
+      font-size:clamp(20px,2.4vw,28px);
+      margin:0;
+    }
+    .search{
+      display:flex;
+      gap:10px;
+    }
+    .search input{
+      width:min(320px,70vw);
+      padding:12px 14px;
+      border:none;
+      border-radius:10px;
+    }
+    .btn{
+      padding:12px 16px;
+      border:none;
+      border-radius:10px;
+      background:var(--accent);
+      color:#fff;
+      cursor:pointer;
+      font-weight:600;
+    }
+    main{
+      max-width:1100px;
+      margin:24px auto;
+      padding:0 16px;
+    }
+
+    .country-info{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      margin-bottom:16px;
+    }
+    .country-info img{
+      width:52px;
+      height:36px;
+      object-fit:cover;
+      border-radius:6px;
+      box-shadow:0 2px 8px rgba(0,0,0,.2);
+    }
+    .updated{
+      opacity:.7;
+      font-size:12px;
+    }
+
+    .overview{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:16px;
+      margin:18px 0;
+    }
+    .card{
+      background:var(--card);border-radius:14px;
+      box-shadow:0 8px 20px rgba(0,0,0,.06);
+      padding:16px 18px;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+    .card h3{
+      font-size:14px;
+      font-weight:600;
+      margin:0;
+      opacity:.8;
+    }
+    .card p{
+      font-size:26px;
+      font-weight:700;
+      margin:0;
+    }
+    .cases{
+      background:#ffe0cc;
+    }
+    .active{
+      background:#ffe0cc;
+    }
+    .recovered{
+      background:#e8fff2;
+    }
+    .deaths{
+      background:#eef3f6;
+    }
+    .today{
+      background:#e6f0ff;
+    }
+
+    .panel{
+      background:#fff;
+      border-radius:16px;
+      box-shadow:0 10px 24px rgba(0,0,0,.07);
+      padding:16px;
+    }
+    canvas{
+      width:100% !important;
+      height:420px !important;
+    }
+
+    footer{
+      margin:30px 0 20px;
+      color:#666;
+      text-align:center;
+    }
+    footer a{
+      color:var(--primary);
+      font-weight:600;
+      text-decoration:none;
+    }
+  
